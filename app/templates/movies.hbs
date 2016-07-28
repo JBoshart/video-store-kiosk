@@ -1,7 +1,10 @@
-<ul>
+<div class="movie-container">
 {{#each model as |movie|}}
- <li>{{movie.title}}</li>
+ <div class="movie">
+   <a href="http://localhost:4200/movies/{{movie.id}}">{{movie.title}}</a>
+   <img src="http://localhost:3000/images/posters/{{movie.poster_filename}}" alt="poster for {{movie.title}}"/>
+ </div>
 {{/each}}
-</ul>
+</div>
 <button {{action "prevPage"}}>Previous</button>
-<button{{action "nextPage"}}>Next</button>
+<button {{action "nextPage"}}>Next</button>

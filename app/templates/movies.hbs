@@ -1,8 +1,7 @@
 <div class="movie-container">
 {{#each model as |movie|}}
  <div class="movie">
-   <a href="http://localhost:4200/movies/{{movie.id}}">{{movie.title}}</a>
-   <img src="http://localhost:3000/images/posters/{{movie.poster_filename}}" alt="poster for {{movie.title}}"/>
+   <img class="poster" src="http://localhost:3000/images/posters/{{movie.poster_filename}}" alt="poster for {{movie.title}}" onclick={{action "selectMovie"}}/>
  </div>
 {{/each}}
 </div>

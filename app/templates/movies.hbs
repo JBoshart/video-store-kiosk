@@ -5,7 +5,7 @@
    <div class="hidden-info">
      <h3>{{movie.title}}</h3>
      <p>{{movie.overview}}</p>
-     <button {{action "addToQueue"}}>Add to Queue</button>
+     <button onclick={{action "addToQueue"}}>Add to Queue</button>
    </div>
  </div>
 {{/each}}
@@ -13,6 +13,11 @@
 
 <!-- <img src="QUEUE_IMAGE" width="80px" height="30px" onMouseOver={{action "showQueue"}} onMouseOut={{action "hideQueue"}}> -->
 
-<div id="queue"></div>
+<div id="queue">
+  {{#each queue as |item|}}
+    {{item}}
+    <img src="{{item}}" alt="poster for"/>
+  {{/each}}
+</div>
 <button {{action "prevPage"}}>Previous</button>
 <button {{action "nextPage"}}>Next</button>

@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   page: 1,
+  queue: [],
   actions: {
     nextPage() {
       if (this.page < 10) {
@@ -16,11 +17,17 @@ export default Ember.Controller.extend({
     selectMovie(event) {
       event.preventDefault()
       $(event.target).next().attr('class', 'visible-info')
-      // Must add excape click? 
+      // Must add excape click?
     },
     addToQueue(event) {
       console.log("I clicked queue")
-      // $('.tile_box').append($("<div>").attr('class', 'tile').attr('data-row', new_row).attr('data-col', new_col).attr('data-val', new_val).text(new_val))
+      let sourceUrl = $(event.target).parent().prev().attr('src')
+      console.log(this.queue)
+      this.queue.push(sourceUrl)
+      console.log(this.queue)
+    },
+    removeQueue(event) {
+      console.log("butts")
     }
   }
 });

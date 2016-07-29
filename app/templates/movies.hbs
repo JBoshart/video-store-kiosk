@@ -2,8 +2,17 @@
 {{#each model as |movie|}}
  <div class="movie">
    <img class="poster" src="http://localhost:3000/images/posters/{{movie.poster_filename}}" alt="poster for {{movie.title}}" onclick={{action "selectMovie"}}/>
+   <div class="hidden-info">
+     <h3>{{movie.title}}</h3>
+     <p>{{movie.overview}}</p>
+     <button {{action "addToQueue"}}>Add to Queue</button>
+   </div>
  </div>
 {{/each}}
 </div>
+
+<!-- <img src="QUEUE_IMAGE" width="80px" height="30px" onMouseOver={{action "showQueue"}} onMouseOut={{action "hideQueue"}}> -->
+
+<div id="queue"></div>
 <button {{action "prevPage"}}>Previous</button>
 <button {{action "nextPage"}}>Next</button>

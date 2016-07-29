@@ -15,8 +15,12 @@ export default Ember.Controller.extend({
     },
     selectMovie(event) {
       event.preventDefault()
-      console.log("I clicked it.")
-
+      $(event.target).next().attr('class', 'visible-info')
+      // Must add excape click? 
+    },
+    addToQueue(event) {
+      console.log("I clicked queue")
+      // $('.tile_box').append($("<div>").attr('class', 'tile').attr('data-row', new_row).attr('data-col', new_col).attr('data-val', new_val).text(new_val))
     }
   }
 });

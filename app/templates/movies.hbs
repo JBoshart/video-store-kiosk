@@ -15,8 +15,8 @@
 
 <div id="queue">
   {{#each queue as |item|}}
-    {{item}}
-    <img src="{{item}}" alt="poster for"/>
+    <img class="poster" src="{{item}}"/>
+    <button onclick={{action "removeQueue"}}>Remove from Queue</button>
   {{/each}}
 </div>
 <button {{action "prevPage"}}>Previous</button>

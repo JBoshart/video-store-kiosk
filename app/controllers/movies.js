@@ -17,17 +17,20 @@ export default Ember.Controller.extend({
     selectMovie(event) {
       event.preventDefault()
       $(event.target).next().attr('class', 'visible-info')
-      // Must add excape click?
+      // Must add escape click?
     },
     addToQueue(event) {
-      console.log("I clicked queue")
       let sourceUrl = $(event.target).parent().prev().attr('src')
-      console.log(this.queue)
-      this.queue.push(sourceUrl)
-      console.log(this.queue)
+
+      this.queue.pushObject(sourceUrl)
+      return queue
     },
     removeQueue(event) {
-      console.log("butts")
+      let removeUrl = $(event.target).prev().attr('src')
+      console.log(removeUrl)
+      this.queue.removeObject(removeUrl)
+      console.log(queue)
+      return queue
     }
   }
 });

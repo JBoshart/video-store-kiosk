@@ -17,7 +17,10 @@ export default Ember.Controller.extend({
     selectMovie(event) {
       event.preventDefault()
       $(event.target).next().attr('class', 'visible-info')
-      // Must add escape click?
+    },
+    deselectMovie(event) {
+      event.preventDefault()
+      $(event.target).parent().attr('class', 'hidden-info')
     },
     addToQueue(event) {
       let sourceUrl = $(event.target).parent().prev().attr('src')

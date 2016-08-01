@@ -5,6 +5,7 @@
    <div class="hidden-info">
      <h3>{{movie.title}}</h3>
      <p>{{movie.overview}}</p>
+     <span class="close" onclick={{action "deselectMovie"}}>x</span>
      <button onclick={{action "addToQueue"}}>Add to Queue</button>
    </div>
  </div>
